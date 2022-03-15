@@ -1,0 +1,11 @@
+.veterinereDanis
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38vh;
+        /* font-size: 4rem;*/
+        background-color: whitesmoke;
+        color: #484C7F;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }

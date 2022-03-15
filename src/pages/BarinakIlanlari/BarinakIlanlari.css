@@ -1,0 +1,86 @@
+.barinakIlanlari{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.baslik {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 3rem;
+    color: #484C7F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ilanBaslik {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 3rem;
+    color: #484C7F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.kartGrubu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    
+}
+
+.card {
+    display: flex;
+    text-align: center;
+}
+
+.barinakListe{
+    display: flexbox;
+    justify-content: center;
+}
+
+.detayKart{
+    justify-content: center;
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.kartButon1{
+    background: #AC8DAF;
+    color: #484C7F;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s all ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.7rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+.kartButon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buton:hover {
+    background: #F1D4D4;
+    color: #484C7F;
+  }

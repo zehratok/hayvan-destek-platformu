@@ -1,0 +1,27 @@
+.AnaSayfa{
+    display: flex;
+    flex-direction: column;
+}
+
+.divider{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.baslik1{
+    text-align: right;
+    font-size: 1.9rem;
+    color: #484C7F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.baslik2{
+    text-align: left;
+    font-size: 1.9rem;
+    color: #484C7F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.buton1{
+    text-align: right;
+}

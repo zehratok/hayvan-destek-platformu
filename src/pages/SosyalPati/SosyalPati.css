@@ -1,0 +1,13 @@
+.sosyalPati{
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+}
+.sosyalListe{
+    display: flex;
+    flex-direction: column;
+   
+}
+.kart{
+    text-align: left;
+}
