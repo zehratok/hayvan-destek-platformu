@@ -1,7 +1,7 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Card } from 'semantic-ui-react';
-import { ReactComponent as IlanResim } from "../resimler/IlanResim.svg";
+import { ReactComponent as IlanResim } from "../../resimler/IlanResim.svg";
 import './BarinakIlanlari.css';
 
 class ListeDetay extends React.Component {

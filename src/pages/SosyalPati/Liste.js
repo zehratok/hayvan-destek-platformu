@@ -1,7 +1,7 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Card, Icon } from 'semantic-ui-react';
-import { ReactComponent as SosyalPatiResim } from "../resimler/SosyalPatiResim.svg";
+import { ReactComponent as SosyalPatiResim } from "../../resimler/SosyalPatiResim.svg";
 import './SosyalPati.css';
 
 class Liste extends React.Component {

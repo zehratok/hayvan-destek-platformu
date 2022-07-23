@@ -1,9 +1,9 @@
 import React from "react";
 import { SlideSection, H1 } from "../../styledComponents/SliderStyle";
-import slide1 from '../resimler/slide1.svg'
-import slide2 from '../resimler/slide2.svg'
-import slide3 from '../resimler/slide3.svg'
-import slide4 from '../resimler/slide4.svg'
+import slide1 from '../../resimler/slide1.svg'
+import slide2 from '../../resimler/slide2.svg'
+import slide3 from '../../resimler/slide3.svg'
+import slide4 from '../../resimler/slide4.svg'
 
 const Slide = ({ info: { image, text } }) => {
   if(image=="slide1"){

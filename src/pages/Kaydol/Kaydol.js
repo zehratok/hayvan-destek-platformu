@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './Kaydol.css';
-import { ReactComponent as KaydolResim } from "../resimler/KaydolResim.svg";
+import { ReactComponent as KaydolResim } from "../../resimler/KaydolResim.svg";
 import axios from 'axios';
 
 class Kaydol extends Component {

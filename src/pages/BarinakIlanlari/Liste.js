@@ -2,7 +2,7 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Link } from "react-router-dom";
 import { Card, Icon } from 'semantic-ui-react';
-import { ReactComponent as BarinakResim } from "../resimler/BarinakResim.svg";
+import { ReactComponent as BarinakResim } from "../../resimler/BarinakResim.svg";
 import './BarinakIlanlari.css';
 
 class Liste extends React.Component {

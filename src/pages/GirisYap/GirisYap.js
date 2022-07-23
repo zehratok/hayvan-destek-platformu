@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './GirisYap.css';
-import { ReactComponent as GirisYapResim } from "../resimler/GirisYapResim.svg";
+import { ReactComponent as GirisYapResim } from "../../resimler/GirisYapResim.svg";
 import { useHistory } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
