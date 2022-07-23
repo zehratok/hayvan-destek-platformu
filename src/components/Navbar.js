@@ -2,10 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import authService from '../services/authService';
 import * as Icons from "react-icons/fa";
-import "./Navbar.css";
 import NavButton from "./NavButton";
 import PrivateNavbar from "./PrivateNavbar";
-import { navItems } from "./NavItems.js";
+import { navItems } from "../constants/NavItems.js";
+import {
+  NavbarStyle,
+  NavbarLogo,
+  NavItems,
+  NavItem,
+  NavItemA,
+  NavItemASpan,
+  SidebarToggle,
+  SidebarToggleLogo,
+  SidebarItems,
+  SidebarItem,
+  SidebarItemA,
+  SidebarActive,
+  Sidebar,
+  SidebarBtn
+} from "../styledComponents/NavbarStyle";
 
 function Navbar() {
   const [mobile, setMobile] = useState(false);
@@ -50,98 +65,155 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-          <Icons.FaCat />
-          Benim Patim Yaşayacak
+      <NavbarStyle>
+        <Link to="/" onClick={() => setSidebar(false)}>
+          <NavbarLogo>
+            <Icons.FaCat />
+            Benim Patim Yaşayacak
+          </NavbarLogo>
         </Link>
         {!mobile && !mevcutKullanici && (
-          <ul className="nav-items">
+          <NavItems>
             {navItems.map((item) => {
               return (
-                <li key={item.id} className={item.nName}>
+                <NavItem key={item.id} >
                   <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
+                    <NavItemA>
+                      {item.icon}
+                      <NavItemASpan>{item.title}</NavItemASpan>
+                    </NavItemA>
                   </Link>
-                </li>
+                </NavItem>
               );
             })}
-          </ul>
+          </NavItems>
         )}
         {!mobile && !mevcutKullanici && <NavButton />}
         {!mobile && mevcutKullanici && <PrivateNavbar />}
 
         {mobile && !mevcutKullanici && (
-          <div className="sidebar-toggle">
+          <SidebarToggle>
             {sidebar ? (
-              <Icons.FaTimes
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
+              <SidebarToggleLogo>
+                <Icons.FaTimes
+                  onClick={() => setSidebar(!sidebar)}
+                />
+              </SidebarToggleLogo>
             ) : (
-              <Icons.FaBars
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
+              <SidebarToggleLogo>
+                <Icons.FaBars
+                  onClick={() => setSidebar(!sidebar)}
+                />
+              </SidebarToggleLogo>
             )}
-          </div>
+          </SidebarToggle>
         )}
         {mobile && mevcutKullanici && (
-          <div className="sidebar-toggle">
+          <SidebarToggle>
             {privateSidebar ? (
-              <Icons.FaTimes
-                className="sidebar-toggle-logo"
-                onClick={() => setPrivateSidebar(!privateSidebar)}
-              />
+              <SidebarToggleLogo>
+                <Icons.FaTimes
+                  onClick={() => setPrivateSidebar(!privateSidebar)}
+                />
+              </SidebarToggleLogo>
             ) : (
-              <Icons.FaBars
-                className="sidebar-toggle-logo"
-                onClick={() => setPrivateSidebar(!privateSidebar)}
-              />
+              <SidebarToggleLogo>
+                <Icons.FaBars
+                  onClick={() => setPrivateSidebar(!privateSidebar)}
+                />
+              </SidebarToggleLogo>
             )}
-          </div>
+          </SidebarToggle>
         )}
-      </nav>
+      </NavbarStyle>
 
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <ul className="sidebar-items">
-          {navItems.map((item) => {
-            return (
-              <li
-                key={item.id}
-                className={item.sName}
-                onClick={() => setSidebar(false)}
-              >
-                <Link to={item.path}>
-                  {item.icon}
-                  <span></span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <NavButton onClick={() => setSidebar(false)} />
-      </div>
-      <div className={privateSidebar ? "sidebar active" : "sidebar"}>
-        <ul className="sidebar-items">
-          {navItems.map((item) => {
-            return (
-              <li
-                key={item.id}
-                className={item.sName}
-                onClick={() => setPrivateSidebar(false)}
-              >
-                <Link to={item.path}>
-                  {item.icon}
-                  <span></span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <PrivateNavbar onClick={() => setPrivateSidebar(false)} />
-      </div>
+      {sidebar ? (
+        <SidebarActive>
+          <SidebarItems>
+            {navItems.map((item) => {
+              return (
+                <SidebarItem
+                  key={item.id}
+                  onClick={() => setSidebar(false)}
+                >
+                  <Link to={item.path}>
+                    <SidebarItemA>
+                      {item.icon}
+                    </SidebarItemA>
+                  </Link>
+                </SidebarItem>
+              );
+            })}
+          </SidebarItems>
+          <SidebarBtn>
+            <NavButton onClick={() => setSidebar(false)} />
+          </SidebarBtn>
+        </SidebarActive>
+      ) : (
+        <Sidebar>
+          <SidebarItems>
+            {navItems.map((item) => {
+              return (
+                <SidebarItem
+                  key={item.id}
+                  onClick={() => setSidebar(false)}
+                >
+                  <Link to={item.path}>
+                    <SidebarItemA>
+                      {item.icon}
+                    </SidebarItemA>
+                  </Link>
+                </SidebarItem>
+              );
+            })}
+          </SidebarItems>
+          <SidebarBtn>
+            <NavButton onClick={() => setSidebar(false)} />
+          </SidebarBtn>
+        </Sidebar>)}
+
+      {privateSidebar ? (
+        <SidebarActive>
+          <SidebarItems>
+            {navItems.map((item) => {
+              return (
+                <SidebarItem
+                  key={item.id}
+                  onClick={() => setPrivateSidebar(false)}
+                >
+                  <Link to={item.path}>
+                    <SidebarItemA>
+                      {item.icon}
+                    </SidebarItemA>
+                  </Link>
+                </SidebarItem>
+              );
+            })}
+          </SidebarItems>
+          <PrivateNavbar onClick={() => setPrivateSidebar(false)} />
+        </SidebarActive>
+      ) : (
+        <Sidebar>
+          <SidebarItems>
+            {navItems.map((item) => {
+              return (
+                <SidebarItem
+                  key={item.id}
+                  onClick={() => setPrivateSidebar(false)}
+                >
+                  <Link to={item.path}>
+                    <SidebarItemA>
+                      {item.icon}
+                    </SidebarItemA>
+                  </Link>
+                </SidebarItem>
+              );
+            })}
+          </SidebarItems>
+          <PrivateNavbar onClick={() => setPrivateSidebar(false)} />
+        </Sidebar>
+      )}
+
     </>
   );
 }

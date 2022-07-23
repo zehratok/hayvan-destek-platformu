@@ -1,22 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "react-icons/fa";
-import "./Button.css";
+import {NavbarBtn, NavbarBtnSpan} from "../styledComponents/NavbarStyle";
+
 
 function NavButton() {
   return (
     <>
       <Link to="kaydol">
-        <button className="navButton">
+        <NavbarBtn >
           <Icons.FaUserPlus />
-          <span>Kaydol</span>
-        </button>
+          <NavbarBtnSpan>Kaydol</NavbarBtnSpan> 
+        </NavbarBtn>
       </Link>
       <Link to="giris-yap">
-        <button className="navButton">
+        <NavbarBtn>
           <Icons.FaSignInAlt />
-          <span>Giriş Yap</span>
-        </button>
+          <NavbarBtnSpan>Giriş Yap</NavbarBtnSpan>
+        </NavbarBtn>
       </Link>
     </>
   );
