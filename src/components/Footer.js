@@ -1,10 +1,18 @@
 import React from 'react';
-import './Footer.css';
 import * as Icons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { footerItems } from "../constants/FooterItems";
 import FooterButton from "./FooterButton";
-import { FooterAbout, FooterAboutSpan, FooterItem, FooterItemA, FooterItemASpan, FooterItems, FooterLogo, FooterStyle } from '../styledComponents/FooterStyle';
+import { 
+    FooterAbout, 
+    FooterAboutSpan, 
+    FooterItem, 
+    FooterItemA, 
+    FooterItemASpan, 
+    FooterItems, 
+    FooterLogo, 
+    FooterStyle 
+} from '../styledComponents/FooterStyle';
 
 function Footer() {
     return (
