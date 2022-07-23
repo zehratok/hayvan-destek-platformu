@@ -13,9 +13,9 @@ class Gonderi extends Component {
     }
     render() {
         return (
-            <div>
+            <>
                 <Liste gonderi={this.state.gonderi} />
-            </div>
+            </>
         )
     }
 }

@@ -5,28 +5,16 @@ export const SlideSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${props => props.url});
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 360px;
-  ::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
+  height: 500px; 
+  margin-left: 150px ;
+  margin-right: 50px ;
 `;
 export const Pagination = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50px;
   background-color: ${props => props.bgColor};
-  margin: 2px;
+  margin: 5px;
   cursor: pointer;
 `;
 export const Flex = styled.div`
@@ -35,8 +23,12 @@ export const Flex = styled.div`
   background-color: ${props => (props.background ? "white" : "")};
 `;
 export const H1 = styled.h1`
-
-  position: right;
+position: absolute;
   color: #AC8DAF;
+  justify-content: center;
+  align-items: center;
+  margin-top: -12rem;
+  margin-left:27rem;
   z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
 `;

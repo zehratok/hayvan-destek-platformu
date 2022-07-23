@@ -1,59 +1,65 @@
 import React, { Component } from 'react';
-import './AnaSayfa.css';
 import Slider from './Slider';
 import Barinak from './Barinak';
 import Gonderi from './Gonderi';
 import { Link } from "react-router-dom";
 import { Divider, Segment } from 'semantic-ui-react';
+import {
+  AnaSayfaStyle,
+  Btn1,
+  DividerStyle,
+  Header1,
+  Header2
+} from '../../styledComponents/AnaSayfaStyle';
 
 class AnaSayfa extends Component {
-  
-render() {
-  return (
-    <div className='AnaSayfa'>
-      <Slider />
-      <div className='divider'>
-        <Segment>
-          <div className='baslik1'>
-            Öne Çıkan Barınaklar
-          </div>
-          <Divider clearing />
-          <Barinak />
-          <div className='buton1'>
-            <Link to="barinaklar">
-              <div className="ui vertical animated button" tabindex="0">
-                <div className="hidden content">
-                  <i className="angle double right icon"></i>
+
+  render() {
+    return (
+      <AnaSayfaStyle>
+        <Slider />
+        <DividerStyle>
+          <Segment>
+            <Header1>
+              Öne Çıkan Barınaklar
+            </Header1>
+            <Divider clearing />
+            <Barinak />
+            <Btn1>
+              <Link to="barinaklar">
+                <div className="ui vertical animated button" tabindex="0">
+                  <div className="hidden content">
+                    <i className="angle double right icon"></i>
+                  </div>
+                  <div className="visible content">
+                    Devamını gör...
+                  </div>
                 </div>
-                <div className="visible content">
-                  Devamını gör...
+              </Link>
+            </Btn1>
+          </Segment>
+          <Segment>
+            <Header2>
+              Öne Çıkan Gönderiler
+            </Header2>
+            <Divider clearing />
+            <Gonderi />
+            <Btn1>
+              <Link to="sosyal-pati">
+                <div className="ui vertical animated button" tabindex="0">
+                  <div className="hidden content">
+                    <i className="angle double right icon"></i>
+                  </div>
+                  <div className="visible content">
+                    Devamını gör...
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </div>
-        </Segment>
-        <Segment>
-          <div className='baslik2'>
-            Öne Çıkan Gönderiler
-          </div>
-          <Divider clearing />
-          <Gonderi />
-          <div className='buton1'>
-            <Link to="sosyal-pati">
-              <div className="ui vertical animated button" tabindex="0">
-                <div className="hidden content">
-                  <i className="angle double right icon"></i>
-                </div>
-                <div className="visible content">
-                  Devamını gör...
-                </div>
-              </div>
-            </Link>
-          </div>
-        </Segment>
-      </div>
-    </div>
-  )
-}
+              </Link>
+            </Btn1>
+          </Segment>
+        </DividerStyle>
+      </AnaSayfaStyle>
+    )
+  }
 }
 export default AnaSayfa;

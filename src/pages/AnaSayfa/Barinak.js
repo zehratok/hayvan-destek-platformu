@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Liste from '../BarinakIlanlari/Liste';
-import './AnaSayfa.css';
 
 class Barinak extends Component {
 
@@ -19,9 +18,9 @@ class Barinak extends Component {
 
     render() {
         return (
-            <div className='oneCikan1'>
+            <>
                 <Liste sehir={this.state.sehir} />
-            </div>
+            </>
         )
     }
 }

@@ -1,35 +1,16 @@
 import React, { Component, Fragment } from "react";
+import slide from '../../constants/SlideItems';
 import Slide from "./Slide";
-import { Pagination, Flex } from "./SliderStyle";
+import { Pagination, Flex } from "../../styledComponents/SliderStyle";
 
 class Slider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            slide: [
-                {
-                    id: "1",
-                    image:
-                        "https://i.hizliresim.com/ozn8tnh.jpg",
-                    text: "Barınakları Ara"
-                },
-                {
-                    id: "2",
-                    image:
-                    "https://i.hizliresim.com/bz99702.jpg",
-                    text: "Evcil Hayvan Sahiplen"
-                },
-                {
-                    id: "3",
-                    image:
-                        "https://i.hizliresim.com/hover2u.jpg",
-                    text: "Veterinere Soru Sor"
-                }
-            ],
+            slide,
             currentIndex: 0
         };
     }
-
     previousState = () => {
         const { slide, currentIndex } = this.state;
         if (currentIndex === 0) {
@@ -58,9 +39,9 @@ class Slider extends Component {
                 <Slide key={slide[currentIndex].id} info={slide[currentIndex]} />
                 <Flex background>
                     {slide.map(v => {
-                        let bgColor = "whitesmoke";
+                        let bgColor = "#F1D4D4";
                         if (currentIndex + 1 === +v.id) {
-                            bgColor = "#DDB6C6";
+                            bgColor = "#AC8DAF";
                         }
                         return (
                             <Pagination
