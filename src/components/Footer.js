@@ -2,35 +2,44 @@ import React from 'react';
 import './Footer.css';
 import * as Icons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { footerItems } from "./FooterItems";
+import { footerItems } from "../constants/FooterItems";
 import FooterButton from "./FooterButton";
+import { FooterAbout, FooterAboutSpan, FooterItem, FooterItemA, FooterItemASpan, FooterItems, FooterLogo, FooterStyle } from '../styledComponents/FooterStyle';
 
 function Footer() {
     return (
         <>
-            <nav className="footer">
-                <Link to="/" className="footer-logo">
-                    <Icons.FaCat />
-                    Benim Patim Yaşayacak
+            <FooterStyle>
+                <Link to="/" >
+                    <FooterLogo>
+                        <Icons.FaCat />
+                        Benim Patim Yaşayacak
+                    </FooterLogo>
                 </Link>
-                <ul className="footer-items">
+                <FooterItems>
                     {footerItems.map((item) => {
                         return (
-                            <li key={item.id} className={item.name}>
+                            <FooterItem key={item.id}>
                                 <Link to={item.path}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
+                                    <FooterItemA>
+                                        {item.icon}
+                                        <FooterItemASpan>{item.title}</FooterItemASpan>
+                                    </FooterItemA>
                                 </Link>
-                            </li>
+                            </FooterItem>
                         );
                     })}
-                </ul>
+                </FooterItems>
                 <FooterButton />
-                <Link to="/hakkimizda" className="footer-about">
-                    <Icons.FaInfoCircle />
-                    Hakkımızda
+                <Link to="/hakkimizda">
+                    <FooterAbout>
+                        <Icons.FaInfoCircle />
+                        <FooterAboutSpan> Hakkımızda </FooterAboutSpan>
+                    </FooterAbout>
+
                 </Link>
-            </nav>
+
+            </FooterStyle>
 
         </>
     )

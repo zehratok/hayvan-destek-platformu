@@ -1,34 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "react-icons/fa";
-import "./Button.css";
-
+import { FooterButtonContainer, FooterBtn } from '../styledComponents/FooterStyle'
 function FooterButton() {
   return (
-    <>
-      <nav className="footerButtonFlex">
-        <Link to="/">
-          <button className="footerButton">
-            <Icons.FaInstagram />
-          </button>
-        </Link>
-        <Link to="/">
-          <button className="footerButton">
-            <Icons.FaTwitter />
-          </button>
-        </Link>
-        <Link to="/">
-          <button className="footerButton">
-            <Icons.FaFacebook />
-          </button>
-        </Link>
-        <Link to="/">
-          <button className="footerButton">
-            <Icons.FaEnvelope />
-          </button>
-        </Link>
-      </nav>
-    </>
+    <FooterButtonContainer>
+      <Link to="/">
+        <FooterBtn>
+          <Icons.FaInstagram />
+        </FooterBtn>
+      </Link>
+      <Link to="/">
+        <FooterBtn>
+          <Icons.FaTwitter />
+        </FooterBtn>
+      </Link>
+      <Link to="/">
+        <FooterBtn>
+          <Icons.FaFacebook />
+        </FooterBtn>
+      </Link>
+      <Link to="/">
+        <FooterBtn>
+          <Icons.FaEnvelope />
+        </FooterBtn>
+      </Link>
+    </FooterButtonContainer>
   );
 }
 
