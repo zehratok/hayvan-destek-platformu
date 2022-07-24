@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Filtre from './Filtre';
 import Liste from './Liste';
-import './BarinakIlanlari.css';
+import { BarinakIlanlariStyle } from '../../styledComponents/BarinakIlanlariStyle';
 
 class BarinakIlanlari extends React.Component {
 
@@ -24,11 +24,10 @@ class BarinakIlanlari extends React.Component {
 
   render() {
     return (
-      <div className='BarinakIlanlari' >
+      <BarinakIlanlariStyle>
         <Filtre onSearchSubmit={this.onSearchSubmit} />
         <Liste sehir={this.state.sehir} />
-
-      </div>
+      </BarinakIlanlariStyle>
     )
   }
 }

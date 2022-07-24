@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import ListeDetay from './ListeDetay';
-import "./BarinakIlanlari.css";
+import { BarinakIlanlariStyle } from "../../styledComponents/BarinakIlanlariStyle";
 
 class IlanDetay extends React.Component {
 
@@ -18,13 +18,9 @@ class IlanDetay extends React.Component {
 
     render() {
         return (
-            <div className='BarinakIlanlari' >
-
-                <div className="detay">
+            <BarinakIlanlariStyle >
                     <ListeDetay detay={this.state.detay} />
-                </div>
-
-            </div>
+            </BarinakIlanlariStyle>
         );
     }
 }

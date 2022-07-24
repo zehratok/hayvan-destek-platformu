@@ -3,46 +3,44 @@ import 'semantic-ui-css/semantic.min.css';
 import { Link } from "react-router-dom";
 import { Card, Icon } from 'semantic-ui-react';
 import { ReactComponent as IlanResim } from "../../resimler/IlanResim.svg";
-import './BarinakIlanlari.css';
+import { 
+    CardBtn, 
+    CardBtn2, 
+    CardBtnText, 
+    CardGroup, 
+    CardHeader, 
+    CardStyle 
+} from '../../styledComponents/BarinakIlanlariStyle';
 
 class ListeIlan extends React.Component {
     render() {
         return (
-            <div>
-                <Card.Group className='kartGrubu'>
+            <CardGroup>
+                <Card.Group>
                     {this.props.ilanlar.map(ilan => {
                         return (
-                            <div className='card'>
+                            <CardStyle>
                                 <Card>
                                     <Card.Content>
-                                        <IlanResim className='resim' />
-                                        <Card.Header>{ilan.baslik}</Card.Header>
-                                        <Card.Description>
-                                            Türü: {ilan.tur} -  Cinsi: {ilan.cins}
-                                        </Card.Description>
-                                        <Card.Description>
-                                            Cinsiyeti: {ilan.cinsiyet} - Yaşı: {ilan.yas}
-                                        </Card.Description>
-                                        <Card.Description>
-                                            İlan Tarihi: {ilan.tarih}
-                                        </Card.Description>
+                                        <IlanResim />
+                                        <CardHeader>{ilan.baslik}</CardHeader>
                                     </Card.Content>
                                     <Card.Content extra>
-                                        <div className='kartButon'>
+                                        <CardBtn>
                                             <Link to={`ilan-detay/${ilan.baslik} , ${ilan.ilan_no}`}>
-                                                <button className="kartButon1">
-                                                    <span>Detayları gör</span>
+                                                <CardBtn2>
+                                                    <CardBtnText>Detayları gör</CardBtnText>
                                                     <Icon name='chevron circle right' />
-                                                </button>
+                                                </CardBtn2>
                                             </Link>
-                                        </div>
+                                        </CardBtn>
                                     </Card.Content>
                                 </Card>
-                            </div>
+                            </CardStyle>
                         )
                     })}
                 </Card.Group>
-            </div>
+            </CardGroup>
         )
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import './BarinakIlanlari.css';
+import { FiltreStyle, Header } from '../../styledComponents/BarinakIlanlariStyle';
 
 class Filtre extends Component {
 
@@ -16,8 +16,8 @@ class Filtre extends Component {
 
     render() {
         return (
-            <div className='filtre'>
-                <div className='baslik'>BARINAKLAR</div>
+            <FiltreStyle>
+                <Header>BARINAKLAR</Header>
                 <form className='ui' onSubmit={this.onFormSubmit}>
                     <div className='ui icon input'>
                         <input
@@ -29,7 +29,7 @@ class Filtre extends Component {
                         <i className='search icon'></i>
                     </div>
                 </form>
-            </div>
+            </FiltreStyle>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import ListeIlan from './ListeIlan';
-import './BarinakIlanlari.css';
+import { BarinakIlanlariStyle, Header, NoticeHeader } from "../../styledComponents/BarinakIlanlariStyle";
 class BarinakIlanlariListe extends React.Component {
 
   constructor(props) {
@@ -17,16 +17,14 @@ class BarinakIlanlariListe extends React.Component {
 
   render() {
     return (
-      <div className='BarinakIlanlari' >
-        <div className="ilan">
-          <div className="baslik">
-            <div className="ilanBaslik">
+      <BarinakIlanlariStyle>
+          <Header>
+            <NoticeHeader>
               {this.props.match.params.barinak_adi}
-            </div>
-          </div>
+            </NoticeHeader>
+          </Header>
           <ListeIlan ilanlar={this.state.ilanlar} />
-        </div>
-      </div>
+      </BarinakIlanlariStyle>
     );
   }
 }
