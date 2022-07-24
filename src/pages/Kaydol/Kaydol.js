@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import './Kaydol.css';
 import { ReactComponent as KaydolResim } from "../../resimler/KaydolResim.svg";
 import axios from 'axios';
+import {
+  Btn,
+  Form,
+  FormElement,
+  FormInput,
+  FormText,
+  Image,
+  Kayit,
+  Link,
+  LinkText,
+  Select
+} from '../../styledComponents/KayitGirisStyle';
 
 class Kaydol extends Component {
 
@@ -23,37 +34,39 @@ class Kaydol extends Component {
 
   render() {
     return (
-      <div className="kaydol">
-        <KaydolResim className="resim" />
-        <div className="form">
-          <form className="formEleman" onSubmit={this.handleSubmit}>
-            <label className="text" htmlFor="kullanici_tipi">Kullanıcı tipi seçin</label>
-            <select className="secim" id='kullanici_tipi' name="kullanici_tipi">
+      <Kayit>
+        <Image>
+          <KaydolResim />
+        </Image>
+        <Form>
+          <FormElement onSubmit={this.handleSubmit}>
+            <FormText htmlFor="kullanici_tipi">Kullanıcı tipi seçin</FormText>
+            <Select id='kullanici_tipi' name="kullanici_tipi">
               <option value="1"> Kullanıcı </option>
               <option value="2">Veteriner</option>
               <option value="3">Barınak Yetkilisi</option>
-            </select>
+            </Select>
 
-            <label className="text" htmlFor="kullanici_adi">Kullanıcı adı girin</label>
-            <input type="text" placeholder="Kullanıcı adı"
+            <FormText htmlFor="kullanici_adi">Kullanıcı adı girin</FormText>
+            <FormInput type="text" placeholder="Kullanıcı adı"
               id='kullanici-adi' name='kullaniic_adi' />
 
-            <label className="text" htmlFor="email">Mail adresi girin </label>
-            <input type="text" placeholder="Email"
+            <FormText htmlFor="email">Mail adresi girin </FormText>
+            <FormInput type="text" placeholder="Email"
               id='email' name='email' />
 
-            <label className="text" htmlFor="parola">Parola oluşturun</label>
-            <input type="text" placeholder="Parola"
+            <FormText htmlFor="parola">Parola oluşturun</FormText>
+            <FormInput type="text" placeholder="Parola"
               id='parola' name='parola' />
 
-            <button className="kayitButonu" >Kaydol</button>
-          </form>
-          <div className="link">
+            <Btn>Kaydol</Btn>
+          </FormElement>
+          <Link>
             Hesabınız mı var?
-            <a href="./giris-yap">Giriş yapın.</a>
-          </div>
-        </div>
-      </div>
+            <LinkText href="./giris-yap">Giriş yapın.</LinkText>
+          </Link>
+        </Form>
+      </Kayit>
     );
   }
 }
